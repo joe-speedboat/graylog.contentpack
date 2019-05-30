@@ -1,228 +1,257 @@
-{            "extractors": [
-                {
-                    "condition_type": "NONE",
-                    "condition_value": "",
-                    "extractor_config": {
-                        "regex_value": "\\]: new user: name=(.+?),\\s.*"
-                    },
-                    "converters": [],
-                    "cursor_strategy": "COPY",
-                    "order": 0,
-                    "source_field": "message",
-                    "target_field": "user_created",
-                    "title": "User Created",
-                    "type": "REGEX"
-                },
-                {
-                    "condition_type": "NONE",
-                    "condition_value": "",
-                    "extractor_config": {
-                        "regex_value": "\\]: delete user \\'(.+?)\\'"
-                    },
-                    "converters": [],
-                    "cursor_strategy": "COPY",
-                    "order": 0,
-                    "source_field": "message",
-                    "target_field": "user_deleted",
-                    "title": "User Deleted",
-                    "type": "REGEX"
-                },
-                {
-                    "condition_type": "NONE",
-                    "condition_value": "",
-                    "extractor_config": {
-                        "regex_value": "\\]: removed group \\'(.+?)\\'"
-                    },
-                    "converters": [],
-                    "cursor_strategy": "COPY",
-                    "order": 0,
-                    "source_field": "message",
-                    "target_field": "group_removed",
-                    "title": "Group removed",
-                    "type": "REGEX"
-                },
-                {
-                    "condition_type": "NONE",
-                    "condition_value": "",
-                    "extractor_config": {
-                        "regex_value": "\\]: new group: name=(.+?),\\s.*"
-                    },
-                    "converters": [],
-                    "cursor_strategy": "COPY",
-                    "order": 0,
-                    "source_field": "message",
-                    "target_field": "group_created",
-                    "title": "Group created",
-                    "type": "REGEX"
-                },
-                {
-                    "condition_type": "NONE",
-                    "condition_value": "",
-                    "extractor_config": {
-                        "regex_value": "chauthtok\\): password changed for (.+)"
-                    },
-                    "converters": [],
-                    "cursor_strategy": "COPY",
-                    "order": 0,
-                    "source_field": "message",
-                    "target_field": "user_pswd_change",
-                    "title": "User password change",
-                    "type": "REGEX"
-                },
-                {
-                    "condition_type": "NONE",
-                    "condition_value": "",
-                    "extractor_config": {
-                        "regex_value": "sshd:session\\): session closed for user (.+)"
-                    },
-                    "converters": [],
-                    "cursor_strategy": "COPY",
-                    "order": 0,
-                    "source_field": "message",
-                    "target_field": "user_logged_off",
-                    "title": "User logged off",
-                    "type": "REGEX"
-                },
-                {
-                    "condition_type": "NONE",
-                    "condition_value": "",
-                    "extractor_config": {
-                        "regex_value": ": Accepted password for (.+?)\\s.*"
-                    },
-                    "converters": [],
-                    "cursor_strategy": "COPY",
-                    "order": 0,
-                    "source_field": "message",
-                    "target_field": "login_user",
-                    "title": "User logged in",
-                    "type": "REGEX"
-                },
-                {
-                    "condition_type": "NONE",
-                    "condition_value": "",
-                    "extractor_config": {
-                        "grok_pattern": "%{IPV4}"
-                    },
-                    "converters": [],
-                    "cursor_strategy": "COPY",
-                    "order": 0,
-                    "source_field": "message",
-                    "target_field": "",
-                    "title": "SSH Login IP",
-                    "type": "GROK"
-                },
-                {
-                    "condition_type": "NONE",
-                    "condition_value": "",
-                    "extractor_config": {
-                        "regex_value": ": Failed password for (.+?)\\s.*"
-                    },
-                    "converters": [],
-                    "cursor_strategy": "COPY",
-                    "order": 0,
-                    "source_field": "message",
-                    "target_field": "passwd_failed_user",
-                    "title": "Password failed user",
-                    "type": "REGEX"
-                },
-                {
-                    "condition_type": "NONE",
-                    "condition_value": "",
-                    "extractor_config": {
-                        "regex_value": "\\(su-l:session\\): session opened for user (.+?)\\s.*"
-                    },
-                    "converters": [],
-                    "cursor_strategy": "COPY",
-                    "order": 0,
-                    "source_field": "message",
-                    "target_field": "su_session_user",
-                    "title": "'su' session user",
-                    "type": "REGEX"
-                },
-                {
-                    "condition_type": "NONE",
-                    "condition_value": "",
-                    "extractor_config": {
-                        "regex_value": "\\(su-l:session\\): session opened for user .+?\\sby\\s(.+)\\("
-                    },
-                    "converters": [],
-                    "cursor_strategy": "COPY",
-                    "order": 0,
-                    "source_field": "message",
-                    "target_field": "su_opened_by_user",
-                    "title": "'su' opened by",
-                    "type": "REGEX"
-                },
-                {
-                    "condition_type": "NONE",
-                    "condition_value": "",
-                    "extractor_config": {
-                        "regex_value": "su: FAILED SU \\(to\\s(.+?)\\)\\s.*"
-                    },
-                    "converters": [],
-                    "cursor_strategy": "COPY",
-                    "order": 0,
-                    "source_field": "message",
-                    "target_field": "su_failed_user",
-                    "title": "'su' failed user",
-                    "type": "REGEX"
-                },
-                {
-                    "condition_type": "NONE",
-                    "condition_value": "",
-                    "extractor_config": {
-                        "regex_value": "yum\\[.+]:\\s+Installed:\\s(.+)"
-                    },
-                    "converters": [],
-                    "cursor_strategy": "COPY",
-                    "order": 0,
-                    "source_field": "message",
-                    "target_field": "yum_package_installed",
-                    "title": "Yum package installed",
-                    "type": "REGEX"
-                },
-                {
-                    "condition_type": "NONE",
-                    "condition_value": "",
-                    "extractor_config": {
-                        "regex_value": "yum\\[.+]:\\s+Erased:\\s(.+)"
-                    },
-                    "converters": [],
-                    "cursor_strategy": "COPY",
-                    "order": 0,
-                    "source_field": "message",
-                    "target_field": "yum_package_removed",
-                    "title": "Yum package removed",
-                    "type": "REGEX"
-                },
-                {
-                    "condition_type": "NONE",
-                    "condition_value": "",
-                    "extractor_config": {
-                        "regex_value": "systemd\\: Started (.+)"
-                    },
-                    "converters": [],
-                    "cursor_strategy": "COPY",
-                    "order": 0,
-                    "source_field": "message",
-                    "target_field": "service_started",
-                    "title": "Service started",
-                    "type": "REGEX"
-                },
-                {
-                    "condition_type": "NONE",
-                    "condition_value": "",
-                    "extractor_config": {
-                        "regex_value": "systemd\\: Stopped (.+)"
-                    },
-                    "converters": [],
-                    "cursor_strategy": "COPY",
-                    "order": 0,
-                    "source_field": "message",
-                    "target_field": "service_stopped",
-                    "title": "Service stopped",
-                    "type": "REGEX"
-                }
-            ],
+{
+  "extractors": [
+    {
+      "title": "User Created",
+      "extractor_type": "regex",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "message",
+      "target_field": "user_created",
+      "extractor_config": {
+        "regex_value": "\\]: new user: name=(.+?),\\s.*"
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "User Deleted",
+      "extractor_type": "regex",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "message",
+      "target_field": "user_deleted",
+      "extractor_config": {
+        "regex_value": "\\]: delete user \\'(.+?)\\'"
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "Group created",
+      "extractor_type": "regex",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "message",
+      "target_field": "group_created",
+      "extractor_config": {
+        "regex_value": "\\]: new group: name=(.+?),\\s.*"
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "User logged off",
+      "extractor_type": "regex",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "message",
+      "target_field": "user_logged_off",
+      "extractor_config": {
+        "regex_value": "sshd:session\\): session closed for user (.+)"
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "User password change",
+      "extractor_type": "regex",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "message",
+      "target_field": "user_pswd_change",
+      "extractor_config": {
+        "regex_value": "chauthtok\\): password changed for (.+)"
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "SSH Login IP",
+      "extractor_type": "grok",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "message",
+      "target_field": "",
+      "extractor_config": {
+        "grok_pattern": "%{IPV4}"
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "'su' session user",
+      "extractor_type": "regex",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "message",
+      "target_field": "su_session_user",
+      "extractor_config": {
+        "regex_value": "\\(su-l:session\\): session opened for user (.+?)\\s.*"
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "Service stopped",
+      "extractor_type": "regex",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "message",
+      "target_field": "service_stopped",
+      "extractor_config": {
+        "regex_value": "systemd\\: Stopped (.+)"
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "Service started",
+      "extractor_type": "regex",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "message",
+      "target_field": "service_started",
+      "extractor_config": {
+        "regex_value": "systemd\\: Started (.+)"
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "'su' opened by",
+      "extractor_type": "regex",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "message",
+      "target_field": "su_opened_by_user",
+      "extractor_config": {
+        "regex_value": "\\(su-l:session\\): session opened for user .+?\\sby\\s(.+)\\("
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "Yum package installed",
+      "extractor_type": "regex",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "message",
+      "target_field": "yum_package_installed",
+      "extractor_config": {
+        "regex_value": "yum\\[.+]:\\s+Installed:\\s(.+)"
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "Yum package removed",
+      "extractor_type": "regex",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "message",
+      "target_field": "yum_package_removed",
+      "extractor_config": {
+        "regex_value": "yum\\[.+]:\\s+Erased:\\s(.+)"
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "'su' failed user",
+      "extractor_type": "regex",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "message",
+      "target_field": "su_failed_user",
+      "extractor_config": {
+        "regex_value": "su: FAILED SU \\(to\\s(.+?)\\)\\s.*"
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "Group removed (userdel) ",
+      "extractor_type": "regex",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "message",
+      "target_field": "group_removed",
+      "extractor_config": {
+        "regex_value": ": removed group '(.*?)' owned by "
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "Group removed (groupdel)",
+      "extractor_type": "regex",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "message",
+      "target_field": "group_removed",
+      "extractor_config": {
+        "regex_value": "groupdel\\[.*?\\]: group '(.*?)' removed"
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "User logged in (ssh+password)",
+      "extractor_type": "regex",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "message",
+      "target_field": "login_user",
+      "extractor_config": {
+        "regex_value": ": Accepted password for (.+?)\\s.*"
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "User logged in (ssh+key)",
+      "extractor_type": "regex",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "message",
+      "target_field": "login_user",
+      "extractor_config": {
+        "regex_value": "pam_unix\\(sshd:session\\): session opened for user (.*?) by"
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "Password failed (user known)",
+      "extractor_type": "regex",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "message",
+      "target_field": "passwd_failed_user",
+      "extractor_config": {
+        "regex_value": ": Failed password for (.+?) from .*"
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    }
+  ],
   "version": "3.0.2"
-        }
+}
