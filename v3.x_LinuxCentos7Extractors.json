@@ -394,6 +394,20 @@
       },
       "condition_type": "none",
       "condition_value": ""
+    },
+    {
+      "title": "YUM: Package: Updated",
+      "extractor_type": "regex",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "message",
+      "target_field": "yum_package_updated",
+      "extractor_config": {
+        "regex_value": "yum.*\\]: Updated: (.*)"
+      },
+      "condition_type": "none",
+      "condition_value": ""
     }
   ],
   "version": "3.0.2"
