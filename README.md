@@ -8,9 +8,9 @@ Graylog 3 Content Packs
 * Extractors are once in ContentPack and once separated in JSON for better handling.
 
 ## Dashboard Screenshots
-[graylog_dashboard_account_mgmt] screenshots/graylog_dashboard_account_mgmt.png "graylog_dashboard_account_mgmt"
-[graylog_dashboard_account] screenshots/graylog_dashboard_account.png "graylog_dashboard_account"
-[graylog_dashboard_mail] screenshots/graylog_dashboard_mail.png "graylog_dashboard_mail"
-[graylog_dashboard_systemd] screenshots/graylog_dashboard_systemd.png "graylog_dashboard_systemd"
-[graylog_dashboard_yum] screenshots/graylog_dashboard_yum.png "graylog_dashboard_yum"
+![graylog_dashboard_account_mgmt] screenshots/graylog_dashboard_account_mgmt.png    
+![graylog_dashboard_account] screenshots/graylog_dashboard_account.png    
+![graylog_dashboard_mail] screenshots/graylog_dashboard_mail.png   
+![graylog_dashboard_systemd] screenshots/graylog_dashboard_systemd.png   
+![graylog_dashboard_yum] screenshots/graylog_dashboard_yum.png   
 
