@@ -266,6 +266,134 @@
       },
       "condition_type": "none",
       "condition_value": ""
+    },
+    {
+      "title": "Postfix: Block: Host has no reverse DNS",
+      "extractor_type": "regex",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "message",
+      "target_field": "postfix_block_ptr",
+      "extractor_config": {
+        "regex_value": "postfix/.*: hostname (.*) does not resolve to address .*"
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "Postfix: Block: Blacklisted",
+      "extractor_type": "regex",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "message",
+      "target_field": "postfix_block_blacklist",
+      "extractor_config": {
+        "regex_value": "postfix/.* Client host .*? blocked using (\\b(?:[0-9A-Za-z][0-9A-Za-z-]{0,62})(?:\\.(?:[0-9A-Za-z][0-9A-Za-z-]{0,62}))*(\\.?|\\b))"
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "Postfix: SASL: Auth failed",
+      "extractor_type": "regex",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "message",
+      "target_field": "postfixf_sasl_auth_failed",
+      "extractor_config": {
+        "regex_value": ".*\\]: (SASL .*? authentication failed.*)"
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "Postfix: Message: msgid",
+      "extractor_type": "regex",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "message",
+      "target_field": "postfixf_msgid",
+      "extractor_config": {
+        "regex_value": "postfix/.*\\]: ([0-9A-Za-z]*?): .*"
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "Dovecot: Error: SSL failed",
+      "extractor_type": "regex",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "message",
+      "target_field": "dovecot_error_ssl",
+      "extractor_config": {
+        "regex_value": "dovecot: .*: (.*?=.*SSL.*failed.*)"
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "Postfix: Message: delivery",
+      "extractor_type": "grok",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "message",
+      "target_field": "",
+      "extractor_config": {
+        "grok_pattern": "postfix.*: to=<%{EMAILADDRESS:mailto}>, relay=%{DATA:relay}, delay=%{DATA:delay}, delays=%{DATA:delays}, dsn=%{DATA:dsn}, status=%{DATA:status} %{GREEDYDATA:satus_details}"
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "Postfix: Message: Queue",
+      "extractor_type": "grok",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "message",
+      "target_field": "",
+      "extractor_config": {
+        "grok_pattern": "postfix/qmgr.*from=<%{EMAILADDRESS:mailfrom}>, size=%{NUMBER:size}, nrcpt=%{NUMBER:nrcpt} %{GREEDYDATA:msg_details}",
+        "named_captures_only": true
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "postfix: authentication failure details",
+      "extractor_type": "grok",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "message",
+      "target_field": "",
+      "extractor_config": {
+        "grok_pattern": "saslauthd.*\\]: do_auth .*? : %{DATA:postfix_auth_result}: \\[user=%{DATA:user}\\] \\[service=%{DATA:service}\\] \\[realm=%{DATA:realm}\\] \\[mech=%{DATA:mech}\\] \\[reason=%{DATA:reason}\\]"
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "Dovecot: Auth: login",
+      "extractor_type": "grok",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "message",
+      "target_field": "",
+      "extractor_config": {
+        "grok_pattern": "dovecot: imap-login: Login: user=<%{DATA:user}>, method=%{DATA:method}, rip=%{IP:rip}, lip=%{IP:lip}, mpid=%{NUMBER:mpid}, TLS, session=<%{DATA:session}>",
+        "named_captures_only": true
+      },
+      "condition_type": "none",
+      "condition_value": ""
     }
   ],
   "version": "3.0.2"
