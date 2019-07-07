@@ -3,9 +3,11 @@ Graylog 3 Content Packs
 
 
 ## AWX 4.0.0
-![graylog_dashboard_awx](/screenshots/graylog_dashboard_awx.png) 
 * AWX 4.0.0 (Export Logs in Logstash format)
 * Created with Graylog 3.0.2
+### AWX Screenshots
+![graylog_dashboard_awx](/screenshots/graylog_dashboard_awx.png) 
+![graylog_awx_log_conf](/screenshots/graylog_awx_log_conf.png) 
 
 
 ## CentOS 7
