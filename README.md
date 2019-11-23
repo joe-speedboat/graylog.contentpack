@@ -1,13 +1,22 @@
 # graylog.contentpack
 Graylog 3 Content Packs
 
-## Notes
+
+## AWX 4.0.0
+* AWX 4.0.0 (Export Logs in Logstash format)
+* Created with Graylog 3.0.2
+### AWX Screenshots
+![graylog_dashboard_awx](/screenshots/graylog_dashboard_awx.png) 
+![graylog_awx_log_conf](/screenshots/graylog_awx_log_conf.png) 
+
+
+## CentOS 7
 * Created with Graylog 3.0.2 on CentOS7
 * Graylog installed with ansible role: 
 ```ansible-galaxy install uniqconsulting.graylog3```
 * Extractors are once in ContentPack and once separated in JSON for better handling.
 
-## Dashboard Screenshots
+### Dashboard Screenshots
 ![graylog_dashboard_account_mgmt](/screenshots/graylog_dashboard_account_mgmt.png)    
 ![graylog_dashboard_account](/screenshots/graylog_dashboard_account.png)    
 ![graylog_dashboard_mail](/screenshots/graylog_dashboard_mail.png)   
