@@ -1,0 +1,761 @@
+{
+  "v": "1",
+  "id": "374c4860-13a9-4916-9b09-b956923934a5",
+  "rev": 2,
+  "name": "Ansible Tower (AWX)",
+  "summary": "Ansible AWX Content Pack",
+  "description": "Tested with:   \n- AWX 9.0.1.0 on OpenShift 3.1.1  (export in LogStash format)\n- Graylog 3.1.3",
+  "vendor": "Chris Ruettimann",
+  "url": "https://www.bitbull.ch",
+  "parameters": [],
+  "entities": [
+    {
+      "v": "1",
+      "type": {
+        "name": "dashboard",
+        "version": "1"
+      },
+      "id": "9c2005ce-b59e-4f52-9efe-7c2a731e1d07",
+      "data": {
+        "title": {
+          "@type": "string",
+          "@value": "AWX"
+        },
+        "description": {
+          "@type": "string",
+          "@value": "Ansible AWX (Tower)"
+        },
+        "widgets": [
+          {
+            "id": {
+              "@type": "string",
+              "@value": "dd65b2e0-4366-4aa8-8eca-5a0962e4556d"
+            },
+            "description": {
+              "@type": "string",
+              "@value": "Playbook: Failed (5d)"
+            },
+            "type": {
+              "@type": "string",
+              "@value": "QUICKVALUES_HISTOGRAM"
+            },
+            "cache_time": {
+              "@type": "integer",
+              "@value": 60
+            },
+            "time_range": {
+              "type": {
+                "@type": "string",
+                "@value": "relative"
+              },
+              "range": {
+                "@type": "integer",
+                "@value": 432000
+              }
+            },
+            "configuration": {
+              "timerange": {
+                "type": {
+                  "@type": "string",
+                  "@value": "relative"
+                },
+                "range": {
+                  "@type": "integer",
+                  "@value": 432000
+                }
+              },
+              "field": {
+                "@type": "string",
+                "@value": "awx_playbook"
+              },
+              "query": {
+                "@type": "string",
+                "@value": "awx_failed: true"
+              },
+              "limit": {
+                "@type": "integer",
+                "@value": 15
+              },
+              "interval": {
+                "@type": "string",
+                "@value": "hour"
+              },
+              "sort_order": {
+                "@type": "string",
+                "@value": "desc"
+              },
+              "stacked_fields": {
+                "@type": "string",
+                "@value": ""
+              }
+            },
+            "position": {
+              "width": {
+                "@type": "integer",
+                "@value": 4
+              },
+              "height": {
+                "@type": "integer",
+                "@value": 2
+              },
+              "row": {
+                "@type": "integer",
+                "@value": 1
+              },
+              "col": {
+                "@type": "integer",
+                "@value": 3
+              }
+            }
+          },
+          {
+            "id": {
+              "@type": "string",
+              "@value": "cdecad3a-1897-40df-91db-26981b62bd15"
+            },
+            "description": {
+              "@type": "string",
+              "@value": "Playbook: Failed (12h)"
+            },
+            "type": {
+              "@type": "string",
+              "@value": "SEARCH_RESULT_COUNT"
+            },
+            "cache_time": {
+              "@type": "integer",
+              "@value": 60
+            },
+            "time_range": {
+              "type": {
+                "@type": "string",
+                "@value": "relative"
+              },
+              "range": {
+                "@type": "integer",
+                "@value": 43200
+              }
+            },
+            "configuration": {
+              "timerange": {
+                "type": {
+                  "@type": "string",
+                  "@value": "relative"
+                },
+                "range": {
+                  "@type": "integer",
+                  "@value": 43200
+                }
+              },
+              "lower_is_better": {
+                "@type": "boolean",
+                "@value": true
+              },
+              "trend": {
+                "@type": "boolean",
+                "@value": true
+              },
+              "query": {
+                "@type": "string",
+                "@value": "awx_failed: true"
+              }
+            },
+            "position": {
+              "width": {
+                "@type": "integer",
+                "@value": 2
+              },
+              "height": {
+                "@type": "integer",
+                "@value": 2
+              },
+              "row": {
+                "@type": "integer",
+                "@value": 1
+              },
+              "col": {
+                "@type": "integer",
+                "@value": 7
+              }
+            }
+          },
+          {
+            "id": {
+              "@type": "string",
+              "@value": "e7ab3f88-8918-4282-99f4-7cd711a1017e"
+            },
+            "description": {
+              "@type": "string",
+              "@value": "Playbook: Start (5d)"
+            },
+            "type": {
+              "@type": "string",
+              "@value": "QUICKVALUES_HISTOGRAM"
+            },
+            "cache_time": {
+              "@type": "integer",
+              "@value": 60
+            },
+            "time_range": {
+              "type": {
+                "@type": "string",
+                "@value": "relative"
+              },
+              "range": {
+                "@type": "integer",
+                "@value": 432000
+              }
+            },
+            "configuration": {
+              "timerange": {
+                "type": {
+                  "@type": "string",
+                  "@value": "relative"
+                },
+                "range": {
+                  "@type": "integer",
+                  "@value": 432000
+                }
+              },
+              "field": {
+                "@type": "string",
+                "@value": "awx_playbook"
+              },
+              "query": {
+                "@type": "string",
+                "@value": "awx_event:playbook_on_start"
+              },
+              "limit": {
+                "@type": "integer",
+                "@value": 10
+              },
+              "interval": {
+                "@type": "string",
+                "@value": "hour"
+              },
+              "sort_order": {
+                "@type": "string",
+                "@value": "desc"
+              },
+              "stacked_fields": {
+                "@type": "string",
+                "@value": ""
+              }
+            },
+            "position": {
+              "width": {
+                "@type": "integer",
+                "@value": 4
+              },
+              "height": {
+                "@type": "integer",
+                "@value": 2
+              },
+              "row": {
+                "@type": "integer",
+                "@value": 3
+              },
+              "col": {
+                "@type": "integer",
+                "@value": 3
+              }
+            }
+          }
+        ]
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "dashboard",
+        "version": "1"
+      },
+      "id": "76ec448e-39b1-4be5-8768-1ebac8b122ad",
+      "data": {
+        "title": {
+          "@type": "string",
+          "@value": "AWX"
+        },
+        "description": {
+          "@type": "string",
+          "@value": "Ansible AWX (Tower)"
+        },
+        "widgets": [
+          {
+            "id": {
+              "@type": "string",
+              "@value": "dd65b2e0-4366-4aa8-8eca-5a0962e4556d"
+            },
+            "description": {
+              "@type": "string",
+              "@value": "Playbook: Failed (5d)"
+            },
+            "type": {
+              "@type": "string",
+              "@value": "QUICKVALUES_HISTOGRAM"
+            },
+            "cache_time": {
+              "@type": "integer",
+              "@value": 60
+            },
+            "time_range": {
+              "type": {
+                "@type": "string",
+                "@value": "relative"
+              },
+              "range": {
+                "@type": "integer",
+                "@value": 432000
+              }
+            },
+            "configuration": {
+              "timerange": {
+                "type": {
+                  "@type": "string",
+                  "@value": "relative"
+                },
+                "range": {
+                  "@type": "integer",
+                  "@value": 432000
+                }
+              },
+              "field": {
+                "@type": "string",
+                "@value": "awx_playbook"
+              },
+              "query": {
+                "@type": "string",
+                "@value": "awx_failed: true"
+              },
+              "limit": {
+                "@type": "integer",
+                "@value": 15
+              },
+              "interval": {
+                "@type": "string",
+                "@value": "hour"
+              },
+              "sort_order": {
+                "@type": "string",
+                "@value": "desc"
+              },
+              "stacked_fields": {
+                "@type": "string",
+                "@value": ""
+              }
+            },
+            "position": {
+              "width": {
+                "@type": "integer",
+                "@value": 4
+              },
+              "height": {
+                "@type": "integer",
+                "@value": 2
+              },
+              "row": {
+                "@type": "integer",
+                "@value": 1
+              },
+              "col": {
+                "@type": "integer",
+                "@value": 3
+              }
+            }
+          },
+          {
+            "id": {
+              "@type": "string",
+              "@value": "cdecad3a-1897-40df-91db-26981b62bd15"
+            },
+            "description": {
+              "@type": "string",
+              "@value": "Playbook: Failed (12h)"
+            },
+            "type": {
+              "@type": "string",
+              "@value": "SEARCH_RESULT_COUNT"
+            },
+            "cache_time": {
+              "@type": "integer",
+              "@value": 60
+            },
+            "time_range": {
+              "type": {
+                "@type": "string",
+                "@value": "relative"
+              },
+              "range": {
+                "@type": "integer",
+                "@value": 43200
+              }
+            },
+            "configuration": {
+              "timerange": {
+                "type": {
+                  "@type": "string",
+                  "@value": "relative"
+                },
+                "range": {
+                  "@type": "integer",
+                  "@value": 43200
+                }
+              },
+              "lower_is_better": {
+                "@type": "boolean",
+                "@value": true
+              },
+              "trend": {
+                "@type": "boolean",
+                "@value": true
+              },
+              "query": {
+                "@type": "string",
+                "@value": "awx_failed: true"
+              }
+            },
+            "position": {
+              "width": {
+                "@type": "integer",
+                "@value": 2
+              },
+              "height": {
+                "@type": "integer",
+                "@value": 2
+              },
+              "row": {
+                "@type": "integer",
+                "@value": 1
+              },
+              "col": {
+                "@type": "integer",
+                "@value": 7
+              }
+            }
+          },
+          {
+            "id": {
+              "@type": "string",
+              "@value": "e7ab3f88-8918-4282-99f4-7cd711a1017e"
+            },
+            "description": {
+              "@type": "string",
+              "@value": "Playbook: Start (5d)"
+            },
+            "type": {
+              "@type": "string",
+              "@value": "QUICKVALUES_HISTOGRAM"
+            },
+            "cache_time": {
+              "@type": "integer",
+              "@value": 60
+            },
+            "time_range": {
+              "type": {
+                "@type": "string",
+                "@value": "relative"
+              },
+              "range": {
+                "@type": "integer",
+                "@value": 432000
+              }
+            },
+            "configuration": {
+              "timerange": {
+                "type": {
+                  "@type": "string",
+                  "@value": "relative"
+                },
+                "range": {
+                  "@type": "integer",
+                  "@value": 432000
+                }
+              },
+              "field": {
+                "@type": "string",
+                "@value": "awx_playbook"
+              },
+              "query": {
+                "@type": "string",
+                "@value": "awx_event:playbook_on_start"
+              },
+              "limit": {
+                "@type": "integer",
+                "@value": 10
+              },
+              "interval": {
+                "@type": "string",
+                "@value": "hour"
+              },
+              "sort_order": {
+                "@type": "string",
+                "@value": "desc"
+              },
+              "stacked_fields": {
+                "@type": "string",
+                "@value": ""
+              }
+            },
+            "position": {
+              "width": {
+                "@type": "integer",
+                "@value": 4
+              },
+              "height": {
+                "@type": "integer",
+                "@value": 2
+              },
+              "row": {
+                "@type": "integer",
+                "@value": 3
+              },
+              "col": {
+                "@type": "integer",
+                "@value": 3
+              }
+            }
+          }
+        ]
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.1.3+cda805f"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "input",
+        "version": "1"
+      },
+      "id": "03871abf-411d-4253-80b7-8260fead8f4c",
+      "data": {
+        "title": {
+          "@type": "string",
+          "@value": "AWX Logstash"
+        },
+        "configuration": {
+          "override_source": {
+            "@type": "string",
+            "@value": "ansible_awx"
+          },
+          "bind_address": {
+            "@type": "string",
+            "@value": "0.0.0.0"
+          },
+          "port": {
+            "@type": "integer",
+            "@value": 1516
+          },
+          "number_worker_threads": {
+            "@type": "integer",
+            "@value": 3
+          }
+        },
+        "static_fields": {},
+        "type": {
+          "@type": "string",
+          "@value": "org.graylog2.inputs.raw.udp.RawUDPInput"
+        },
+        "global": {
+          "@type": "boolean",
+          "@value": true
+        },
+        "extractors": [
+          {
+            "target_field": {
+              "@type": "string",
+              "@value": ""
+            },
+            "condition_value": {
+              "@type": "string",
+              "@value": ""
+            },
+            "order": {
+              "@type": "integer",
+              "@value": 0
+            },
+            "converters": [],
+            "configuration": {
+              "flatten": {
+                "@type": "boolean",
+                "@value": false
+              },
+              "list_separator": {
+                "@type": "string",
+                "@value": ","
+              },
+              "kv_separator": {
+                "@type": "string",
+                "@value": ":"
+              },
+              "key_prefix": {
+                "@type": "string",
+                "@value": "awx_"
+              },
+              "key_separator": {
+                "@type": "string",
+                "@value": "_"
+              },
+              "replace_key_whitespace": {
+                "@type": "boolean",
+                "@value": true
+              },
+              "key_whitespace_replacement": {
+                "@type": "string",
+                "@value": "_"
+              }
+            },
+            "source_field": {
+              "@type": "string",
+              "@value": "message"
+            },
+            "title": {
+              "@type": "string",
+              "@value": "AWX Logstash UDP : Graylog RAW Input"
+            },
+            "type": {
+              "@type": "string",
+              "@value": "JSON"
+            },
+            "cursor_strategy": {
+              "@type": "string",
+              "@value": "COPY"
+            },
+            "condition_type": {
+              "@type": "string",
+              "@value": "NONE"
+            }
+          }
+        ]
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.0.2+1686930"
+        }
+      ]
+    },
+    {
+      "v": "1",
+      "type": {
+        "name": "input",
+        "version": "1"
+      },
+      "id": "2fe00f29-70f8-4f3b-bda1-16e92c7e4615",
+      "data": {
+        "title": {
+          "@type": "string",
+          "@value": "AWX Logstash"
+        },
+        "configuration": {
+          "override_source": {
+            "@type": "string",
+            "@value": "ansible_awx"
+          },
+          "bind_address": {
+            "@type": "string",
+            "@value": "0.0.0.0"
+          },
+          "port": {
+            "@type": "integer",
+            "@value": 1516
+          },
+          "number_worker_threads": {
+            "@type": "integer",
+            "@value": 3
+          }
+        },
+        "static_fields": {},
+        "type": {
+          "@type": "string",
+          "@value": "org.graylog2.inputs.raw.udp.RawUDPInput"
+        },
+        "global": {
+          "@type": "boolean",
+          "@value": true
+        },
+        "extractors": [
+          {
+            "target_field": {
+              "@type": "string",
+              "@value": ""
+            },
+            "condition_value": {
+              "@type": "string",
+              "@value": ""
+            },
+            "order": {
+              "@type": "integer",
+              "@value": 0
+            },
+            "converters": [],
+            "configuration": {
+              "flatten": {
+                "@type": "boolean",
+                "@value": false
+              },
+              "list_separator": {
+                "@type": "string",
+                "@value": ","
+              },
+              "kv_separator": {
+                "@type": "string",
+                "@value": ":"
+              },
+              "key_prefix": {
+                "@type": "string",
+                "@value": "awx_"
+              },
+              "key_separator": {
+                "@type": "string",
+                "@value": "_"
+              },
+              "replace_key_whitespace": {
+                "@type": "boolean",
+                "@value": true
+              },
+              "key_whitespace_replacement": {
+                "@type": "string",
+                "@value": "_"
+              }
+            },
+            "source_field": {
+              "@type": "string",
+              "@value": "message"
+            },
+            "title": {
+              "@type": "string",
+              "@value": "AWX Logstash UDP : Graylog RAW Input"
+            },
+            "type": {
+              "@type": "string",
+              "@value": "JSON"
+            },
+            "cursor_strategy": {
+              "@type": "string",
+              "@value": "COPY"
+            },
+            "condition_type": {
+              "@type": "string",
+              "@value": "NONE"
+            }
+          }
+        ]
+      },
+      "constraints": [
+        {
+          "type": "server-version",
+          "version": ">=3.1.3+cda805f"
+        }
+      ]
+    }
+  ]
+}
